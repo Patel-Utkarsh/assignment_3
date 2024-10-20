@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Task Management Application
+This is a simple task management application built using React. The app allows users to add, edit, delete, and manage tasks. Tasks are categorized as either "ToDos" (non-executed) or "Executed." Additionally, tasks can be prioritized as High, Medium, or Low, and are sorted accordingly in the "ToDos" section.
 
-## Getting Started
+Features
+Add new tasks with title, description, and priority.
+Edit existing tasks.
+Mark tasks as executed.
+Delete tasks from either category.
+Sort tasks by priority.
+Setup Instructions
+Clone the repository:
 
-First, run the development server:
+bash
+Copy code
+git clone https://github.com/Patel-Utkarsh/assignment_3.git
+Navigate to the project directory:
 
-```bash
+bash
+Copy code
+cd assignment_3
+Install dependencies:
+
+bash
+Copy code
+npm install
+Run the application:
+
+bash
+Copy code
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Open the application in your browser:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit http://localhost:3000.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Approach to Task Sorting by Priority
+The application uses a priority-based sorting mechanism to display tasks. The priority levels are set as High, Medium, and Low. Tasks that have not been executed ("ToDos") are sorted in the following order:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+High Priority tasks are displayed at the top.
+Medium Priority tasks are displayed next.
+Low Priority tasks are displayed at the bottom.
+The sorting is achieved by assigning priority values to an array (priorityOrder) and using JavaScript's .sort() method to arrange tasks based on the index of their priority in that array.
